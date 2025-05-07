@@ -43,9 +43,7 @@
 ## Ce qui est fait : 
 - Intégration  mobile-first du dashboard selon la maquette fournie.
 
-- Sidebar réactive et non superposée, avec comportement collapse en mobile.
-
-- TopBar fidèle à la maquette, responsive et fonctionnelle.
+- Sidebar réactive en mobile, avec comportement collapse en mobile.
 
 - Header avec 4 cards (identité, segment, évaluation des risques, montant), parfaitement alignées.
 

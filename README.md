@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard financier - test technique
+## Lancer le projet
+   bash
+   Copier
+   Modifier
+   git clone <repo-url>
+   cd dashboard-test
+1. Installer les dépendances
+   bash
+   Copier
+   Modifier
+   npm install
+2. Lancer le serveur mock (Node.js)
 
-## Getting Started
+   bash
+   Copier
+   Modifier
+   cd server
+   npm install
+   node index.js
+   Le serveur tournera sur http://localhost:4000/api/....
 
-First, run the development server:
+**Note : Le backend ne répond pas encore à tous les appels du front. Les données sont partiellement statiques.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. Lancer le front
+   bash
+   Copier
+   Modifier
+   cd front
+   npm run dev
+   Application disponible sur http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Techno utilisées
+- Next.js 14 avec app directory
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- React 18 (client components uniquement)
 
-## Learn More
+- MUI 5 (Material UI) pour le layout et les composants
 
-To learn more about Next.js, take a look at the following resources:
+- Recharts pour les visualisations dynamiques (graphes)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js + Express (mock API – non finalisé)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- TypeScript
 
-## Deploy on Vercel
+## Ce qui est fait : 
+- Intégration  mobile-first du dashboard selon la maquette fournie.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Sidebar réactive et non superposée, avec comportement collapse en mobile.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- TopBar fidèle à la maquette, responsive et fonctionnelle.
+
+- Header avec 4 cards (identité, segment, évaluation des risques, montant), parfaitement alignées.
+
+- Graphique dynamique des taux et tableau EURIBOR responsifs.
+
+- Section “Transactions” fonctionnelle avec :
+
+    - Tabs filtrants
+
+    - 4 cards (statut, montant, prêt en attente, prêt clôturé)
+
+    - Deux tableaux en bas, prêts pour connexion API
+
+## Pourquoi la partie dynamique backend n’est pas finalisée
+J'ai eu moins de 6 heures effectives à consacrer à ce test, réparties sur deux jours, car je suis actuellement en période de soutenances de fin d’année (école, projets, examens...).
+
+J’avais préparé un serveur Node avec Express et des fichiers JSON, mais je n’ai pas eu le temps de finaliser correctement la structure des données et les appels dans tous les composants. J’ai préféré concentrer mon temps sur l'intégration front au pixel, le responsive et la structure modulaire du code.
+
+## Ce que j’aurais aimé faire avec plus de temps
+- Finaliser la connexion dynamique à l’API dans tous les composants.
+
+- Ajouter une vraie gestion des états de chargement et des erreurs.
+
+- Finaliser la page d'accueil avec une "gestion de connexion factice"
+
+- Rendre les filtres fonctionnels sur la base des données reçues.
+
+- Peaufiner les animations, interactions (hover, transitions subtiles) et accessibilité.
+
+## Conclusion
+J’ai fait le maximum dans les temps que j'avais de disponible. Si j’avais pu poser deux jours pleins dessus, je l’aurais finalisé proprement de A à Z. J’espère que le résultat vous plaira.

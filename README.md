@@ -6,28 +6,25 @@
    git clone <repo-url>
    cd dashboard-test
 1. Installer les dépendances
-   bash
-   Copier
-   Modifier
+
+   ```
    npm install
+   ```
 2. Lancer le serveur mock (Node.js)
 
-   bash
-   Copier
-   Modifier
+ ```
    cd server
    npm install
    node index.js
+   ```
    Le serveur tournera sur http://localhost:4000/api/....
 
 **Note : Le backend ne répond pas encore à tous les appels du front. Les données sont partiellement statiques.**
 
 3. Lancer le front
-   bash
-   Copier
-   Modifier
-   cd front
+  ```
    npm run dev
+   ```
    Application disponible sur http://localhost:3000
 
 

@@ -1,10 +1,9 @@
 # Dashboard financier - test technique
 ## Lancer le projet
-   bash
-   Copier
-   Modifier
+  ```
    git clone <repo-url>
    cd dashboard-test
+   ```
 1. Installer les dépendances
 
    ```
